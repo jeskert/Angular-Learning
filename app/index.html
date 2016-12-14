@@ -28,13 +28,17 @@
   </style>
 </head>
 <body>
-<div ng-app="myApp" ng-controller="personCtrl">
-  <button ng-click="toggle()">隐藏/显示</button>
-  <p ng-show="myVar">
-    名：<input type="text" ng-model="person.firstName"><br>
-    姓：<input type="text" ng-model="person.lastName"><br>
-    姓名：{{person.firstName + " " + person.lastName}}
-  </p>
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="user.lastName"><br>
+    <br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
 </div>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
