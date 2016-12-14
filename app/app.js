@@ -18,3 +18,17 @@ app.controller('customersCtrl', function($scope, $http) {
         .success(function (response) {$scope.names = response.records;})
 });
 
+app.controller('myCtrl', function ($scope) {
+    $scope.count = 0;
+});
+
+app.controller('personCtrl', function ($scope) {
+    $scope.person = {
+        firstName: "John",
+        lastName: "Doe"
+    };
+    $scope.myVar = true;
+    $scope.toggle = function () {
+        $scope.myVar = !$scope.myVar;
+    };
+});
