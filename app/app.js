@@ -13,10 +13,8 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
 
-app.controller('customersCtrl', function ($scope, $http) {
-    $http.get("http://www.runoob.com/try/angularjs/data/Customers_JSON.php")
-        .success(function (response) {
-            $scope.names = response.records;
-        });
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("/customer.json")
+        .success(function (response) {$scope.names = response.records;})
 });
 
